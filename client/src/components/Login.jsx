@@ -3,16 +3,21 @@ import React, { Component } from 'react';
 class Login extends Component {
 	constructor() {
 		super()
+		// initiate page state
 		this.setState = {
 			username: '',
 			password: '',
 		}
+		// bind functions
 		this.handleInputChange = this.handleInputChange.bind(this)
 	}
 
 	handleInputChange(e) {
+		// element name
 		const name = e.target.name
-		const value = e.target.value		
+		// element value
+		const value = e.target.value	
+		// set state of name to disclosed value
 		this.setState({
 			[name]: value,
 		})

@@ -19,11 +19,14 @@ class App extends Component {
     }
   }
 
-        // Below are routes that will be used when components are created
-          //   <Route path='/login' component={Login} />
-          // <Route path='/register' component={Register} />
-          // <Route path='/dashboard' component={Dashboard} />
-          // <Route path='/movies' component={Movies} />
+  handleLoginSubmit(e, data) {
+    // prevent page from refreshing after click
+  }
+
+
+  // Below are routes that will be used when components are created
+  // <Route path='/dashboard' component={Dashboard} />
+  // <Route path='/movies' component={Movies} />
 
   // render data
   render() {
@@ -31,6 +34,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <Route exact path='/' component={Home} />
+          <Route path='/login' component={Login} />
+          <Route path='/register' component={Register} />
           <Header />
           <Footer />
         </div>
