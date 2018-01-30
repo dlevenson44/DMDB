@@ -17,6 +17,8 @@ class App extends Component {
       auth: false,
       user: null,
     }
+    this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
+    this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)
   }
 
   handleLoginSubmit(e, data) {
@@ -69,13 +71,26 @@ class App extends Component {
   // <Route path='/movies' component={Movies} />
 
   // render data
+  // conditional rendering set up checking auth state for dashboard, login, and register routes
   render() {
     return (
       <Router>
         <div className="App">
           <Route exact path='/' component={Home} />
-          <Route path='/login' component={Login} />
-          <Route path='/register' component={Register} />
+          <Route exact path='/login' render={() => (
+            this.state.auth
+            ? <Redirect to='/dashboard' />
+            : <Login handleLoginSubmit={this.handleLoginSubmit} />
+            )} />
+          <Route exact path='/register' render={() => (
+            this.state.auth
+            ? <Redirect to='/dashboard' />
+            : <Register handleRegisterSubmit={this.handleRegisterSubmit} />
+            )} />
+          <Route exact path='/dashboard' render={() => (
+            !this.state.auth
+            ?
+            )}
           <Header />
           <Footer />
         </div>
