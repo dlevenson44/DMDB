@@ -19,6 +19,7 @@ class App extends Component {
     }
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)
+    this.logout = this.logout.bind(this)
   }
 
   handleLoginSubmit(e, data) {
@@ -65,6 +66,17 @@ class App extends Component {
     }).catch(err => console.log(err))
   }
 
+  logout() {
+    fetch('/api/auth/logout', {
+      credentials: 'include',
+    }).then(res => res.json())
+    .then(res => {
+      this.setState({
+        auth: res.auth,
+        user: res.data.user,
+      })
+    }).catch(err => console.log(err))
+  }
 
   // Below are routes that will be used when components are created
   // <Route path='/dashboard' component={Dashboard} />
