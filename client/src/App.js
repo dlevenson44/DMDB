@@ -21,6 +21,46 @@ class App extends Component {
 
   handleLoginSubmit(e, data) {
     // prevent page from refreshing after click
+    e.preventDefault()
+    // make POST fetch to submit login attempt
+    fetch('/api/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify(data)
+    }).then(res => res.json())
+    .then(res => {
+      console.log(res, 'this is res in handle login')
+      // after successful response from server, set state to these values
+      this.setState({
+        auth: res.auth,
+        user: res.data.user
+      })
+    }).catch(err => console.log(err))
+  }
+
+  handleRegisterSubmit(e, data) {
+    // prevent page refresh
+    e.preventDefault()
+    // create account POST
+    fetch('/api/auth/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify(data)
+    }).then(res => res.json())
+    .then(res => {
+      console.log(res, 'this is res from register handler')
+      // set data as state
+      this.setState({
+        auth: res.auth,
+        user: res.data.user
+      })
+    }).catch(err => console.log(err))
   }
 
 
