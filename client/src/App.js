@@ -81,6 +81,17 @@ class App extends Component {
     }).catch(err => console.log(err))
   }
 
+  componentDidMount() {
+    fetch('/api/auth/verify', { credentials: 'include'})
+    .then(res => res.json())
+    .then(res => {
+      this.setState({
+        auth: res.auth,
+        user: res.data.user,
+      })
+    }).catch(err => console.log(err))
+  }
+
   // Below are routes that will be used when components are created
   // <Route path='/dashboard' component={Dashboard} />
   // <Route path='/movies' component={Movies} />
