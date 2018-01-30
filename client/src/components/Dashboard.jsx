@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Dashboard = (props) => {
-	render(
+	return(
 		<div>
 			<p>{props.user.email}</p>
 		</div>

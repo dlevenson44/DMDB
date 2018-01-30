@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Login extends Component {
+class Register extends Component {
 	constructor() {
 		super()
 		// initiate page state

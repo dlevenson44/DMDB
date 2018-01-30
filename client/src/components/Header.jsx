@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // // stateless component
-const Header = () => {
+const Header = (props) => {
 	return (
 		<div className="nav-container">
 			<nav>
