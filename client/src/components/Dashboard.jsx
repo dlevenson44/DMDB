@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Dashboard = () => {
+const Dashboard = (props) => {
 	render(
 		<div>
-			<p>{this.props.state.user.email}</p>
+			<p>{props.user.email}</p>
 		</div>
 		)
 }
