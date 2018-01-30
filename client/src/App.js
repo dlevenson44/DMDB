@@ -8,6 +8,9 @@ import { BrowserRouter as Router, Route} from 'react-router-dom'
 import Header from './components/Header'
 import Home from './components/Home'
 import Footer from './components/Footer'
+import Dashboard from './components/Dashboard'
+import Login from './components/Login'
+import Register from './components/Register'
 
 class App extends Component {
   constructor() {
@@ -88,6 +91,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+        <Header logout={this.logout} />
           <Route exact path='/' component={Home} />
           <Route exact path='/login' render={() => (
             this.state.auth
@@ -101,9 +105,9 @@ class App extends Component {
             )} />
           <Route exact path='/dashboard' render={() => (
             !this.state.auth
-            ?
-            )}
-          <Header />
+            ? <Redirect to='/login' />
+            : <Dashboard user={this.state.user} />
+            )} />          
           <Footer />
         </div>
       </Router>

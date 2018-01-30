@@ -26,6 +26,10 @@ const Header = () => {
 					<Link to = '/movies'>
 					<button className="nav-item">Movies</button>
 					</Link>
+
+					<Link to = '/'>
+					<button className="nav-item" onClick={props.logout}>Logout</button>
+					</Link>
 				</ul>
 			</nav>
 		</div>
