@@ -114,9 +114,9 @@ class App extends Component {
             : <Register handleRegisterSubmit={this.handleRegisterSubmit} />
             )} />
           <Route exact path='/dashboard' render={() => (
-            !this.state.auth
-            ? <Redirect to='/login' />
-            : <Dashboard user={this.state.user} />
+            this.state.auth
+            ? <Dashboard user={this.state.user} state={this.state}/>
+            : <Redirect to='/login' />
             )} />
           <Route exact path='/movies' render={() => <MovieList auth={this.state.auth} />} />
           <Footer />

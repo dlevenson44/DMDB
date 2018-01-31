@@ -25,6 +25,7 @@ class Register extends Component {
 	}
 
 	render() {
+		console.log(this, 'from register component')
 		return(
 			<div>
 				<form onSubmit={(e) => this.props.handleRegisterSubmit(e, this.state)}>

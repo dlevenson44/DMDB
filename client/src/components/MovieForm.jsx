@@ -9,6 +9,7 @@ class MovieForm extends Component {
 			description: props.movie ? props.movie.description : '',
 		}
 		this.handleChange = this.handleChange.bind(this)
+		this.handleFormSubmit = this.handleFormSubmit.bind(this)
 	}
 
 	handleChange(e) {
@@ -19,11 +20,29 @@ class MovieForm extends Component {
 		})
 	}
 
+	handleFormSubmit(method, e, data, id) {
+		e.preventDefualt()
+		console.log('clicked')
+		fetch(`/api/movies/${id || ''}`, {
+			method: method,
+			credentials: 'include',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringifiy(data),
+		}).then(res => res.json())
+		.then(res => {
+			console.log(res)
+			this.getAllMovies()
+		}).catch(err => console.log(err))
+	}
+
 	render() {
+		console.log(this, 'form MovieForm')
 		return(
 			<form onSubmit={(this.props.isAdd
-				? (e) => this.props.handleFormSubmit('POST', e, this.state)
-				: (e) => this.props.handleFormSubmit('PUT', e, this.state, this.props.movie.id)
+				? () => this.handleFormSubmit('POST', this.state)
+				: () => this.handleFormSubmit('PUT', this.state, this.props.movie.id)
 				)}>
 				<input type="text" name="title" placeholder="Title" value={this.state.title} onChange={this.handleChange} />
 				<input type="text" name="description" placeholder="Description" value={this.state.description} onChange={this.handleChange} />

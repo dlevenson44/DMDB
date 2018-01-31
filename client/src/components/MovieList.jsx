@@ -34,13 +34,14 @@ class MovieList extends Component {
 	}
 
 	setEditing(id) {
-		this.setStatE({
+		this.setState({
 			currentlyEditing: id,
 		})
 	}
 
 	handleFormSubmit(method, e, data, id) {
 		e.preventDefualt()
+		console.log('clicked')
 		fetch(`/api/movies/${id || ''}`, {
 			method: method,
 			credentials: 'include',
