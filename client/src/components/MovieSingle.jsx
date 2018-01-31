@@ -17,3 +17,5 @@ const MovieSingle = (props) => {
 		</div>
 		)
 }
+
+export default MovieSingle;
