@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import './App.css';
 // import react router
-import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 // import components
 import Header from './components/Header'
@@ -21,6 +21,8 @@ class App extends Component {
     this.state = {
       auth: false,
       user: null,
+      fireRedirect: false,
+      redirectPath: null
     }
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)

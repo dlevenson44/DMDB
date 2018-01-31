@@ -52,9 +52,6 @@ class MovieList extends Component {
 	render() {
 		return(
 			<div className="movielist">
-				{this.state.auth
-					? <MovieForm isAdd={true} getAllMovies={this.getAllMovies} />
-					: ''}
 				{this.renderMovieList()}
 			</div>
 			)

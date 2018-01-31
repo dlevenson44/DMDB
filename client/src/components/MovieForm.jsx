@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom'
 
 class MovieForm extends Component {
 	constructor(props) {
@@ -7,6 +8,8 @@ class MovieForm extends Component {
 			title: props.movie ? props.movie.title : '',
 			genre: props.movie ? props.movie.genre : '',
 			description: props.movie ? props.movie.description : '',
+			fireRedirect: false,
+			redirectPath: null,
 		}
 		this.handleChange = this.handleChange.bind(this)
 		this.handleFormSubmit = this.handleFormSubmit.bind(this)
@@ -32,8 +35,15 @@ class MovieForm extends Component {
 			body: JSON.stringify(data),
 		}).then(res => res.json())
 		.then(res => {
-			console.log(res)
-			alert('Succesfully Added!')
+			this.setState({
+	          fireRedirect: true,
+	          redirectPath: `/`,
+			})
+		// 	if (this.props.isAdd) {
+		// 	alert('Succesfully Added!')
+		// } else {
+		// 	alert('Succesfully Edited!')
+		// }
 		}).catch(err => console.log(err))
 	}
 
