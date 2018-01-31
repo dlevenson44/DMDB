@@ -33,27 +33,9 @@ class MovieForm extends Component {
 		}).then(res => res.json())
 		.then(res => {
 			console.log(res)
-			// this.props.getAllMovies()
 			alert('Succesfully Added!')
 		}).catch(err => console.log(err))
 	}
-
-	// handleNewMovie(method, e, data) {
-	// 	e.preventDefault()
-	// 	console.log('clicked')
-	// 	fetch(`/api/movies/`, {
-	// 		method: method,
-	// 		credentials: 'include',
-	// 		headers: {
-	// 			'Content-Type': 'application/json',
-	// 		},
-	// 		body: JSON.stringify(data),
-	// 	}).then(res => res.json())
-	// 	.then(res => {
-	// 		console.log(res)
-	// 		this.props
-	// 	})
-	// }
 
 	render() {
 		console.log(this, 'form MovieForm')
