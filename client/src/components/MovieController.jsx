@@ -1,9 +1,9 @@
 // import dependencies and components
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
-import Movie from './Movie'
 import MovieForm from './MovieForm'
 import MovieList from './MovieList'
+import MovieSingle from './MovieSingle'
 
 class MovieController extends Component {
 	constructor(props) {
@@ -71,7 +71,7 @@ class MovieController extends Component {
 				return <MovieList allMovies={this.state.allMovies} />
 				break;
 			case 'show':
-				return <Movie currentMovie={this.state.currentMovie} movieDelete={this.movieDelete} />
+				return <MovieSingle currentMovie={this.state.currentMovie} movieDelete={this.movieDelete} />
 				break;
 			case 'new':
 				return <MovieForm isadd={true} handleFormSubmit={this.handleFormSubmit} />
