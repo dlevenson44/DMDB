@@ -1,6 +1,6 @@
 // require dependencies
 const express = require('express')
-const movieRoutes = expres.Router()
+const movieRoutes = express.Router()
 
 // import controller
 const moviesController = require('../controllers/movies-controller')
