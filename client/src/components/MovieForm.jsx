@@ -21,7 +21,7 @@ class MovieForm extends Component {
 	}
 
 	handleFormSubmit(method, e, data, id) {
-		e.preventDefualt()
+		e.preventDefault()
 		console.log('clicked')
 		fetch(`/api/movies/${id || ''}`, {
 			method: method,
@@ -40,10 +40,7 @@ class MovieForm extends Component {
 	render() {
 		console.log(this, 'form MovieForm')
 		return(
-			<form onSubmit={(this.props.isAdd
-				? () => this.handleFormSubmit('POST', this.state)
-				: () => this.handleFormSubmit('PUT', this.state, this.props.movie.id)
-				)}>
+			<form onSubmit={(e) => this.handleFormSubmit('POST', e, this.state)			}>
 				<input type="text" name="title" placeholder="Title" value={this.state.title} onChange={this.handleChange} />
 				<input type="text" name="description" placeholder="Description" value={this.state.description} onChange={this.handleChange} />
 				<input type="text" name="genre" placeholder="Genre" value={this.state.genre} onChange={this.handleChange} />
