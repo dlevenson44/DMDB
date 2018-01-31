@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 import Dashboard from './components/Dashboard'
 import Login from './components/Login'
 import Register from './components/Register'
+import MovieList from './components/MovieList'
 
 class App extends Component {
   constructor() {
@@ -93,9 +94,6 @@ class App extends Component {
     }).catch(err => console.log(err))
   }
 
-  // Below are routes that will be used when components are created
-  // <Route path='/dashboard' component={Dashboard} />
-  // <Route path='/movies' component={Movies} />
 
   // render data
   // conditional rendering set up checking auth state for dashboard, login, and register routes
@@ -119,7 +117,8 @@ class App extends Component {
             !this.state.auth
             ? <Redirect to='/login' />
             : <Dashboard user={this.state.user} />
-            )} />          
+            )} />
+          <Route exact path='/movies' render={() => <MovieLiust auth={this.state.auth} />} />
           <Footer />
         </div>
       </Router>
