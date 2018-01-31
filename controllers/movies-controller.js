@@ -6,7 +6,7 @@ const movieController = {};
 
 // movie index function, displays all movies
 movieController.index = (req, res, next) => {
-	Movie.findAl()
+	Movie.findAll()
 	.then(movies => {
 		res.json({
 			message: 'ok',
