@@ -2,7 +2,7 @@
 CREATE TABLE IF NOT EXISTS users (
 	id SERIAL PRIMARY KEY,
 	username VARCHAR(225) UNIQUE NOT NULL,
-	password_digetst TEXT NOT NULL,
+	password_digest TEXT NOT NULL,
 	email VARCHAR(225) UNIQUE NOT NULL
 );
 

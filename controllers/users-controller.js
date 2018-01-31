@@ -25,7 +25,7 @@ usersController.create = (req, res, next) => {
 				})
 			}
 		)
-	})
+	}).catch(next)
 }
 
 // export controller
