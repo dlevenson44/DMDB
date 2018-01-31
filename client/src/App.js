@@ -12,6 +12,7 @@ import Dashboard from './components/Dashboard'
 import Login from './components/Login'
 import Register from './components/Register'
 import MovieList from './components/MovieList'
+import MovieForm from './components/MovieForm'
 
 class App extends Component {
   constructor() {
@@ -94,6 +95,17 @@ class App extends Component {
     }).catch(err => console.log(err))
   }
 
+  getAllMovies() {
+    fetch('/api/movies', { credentials: 'include' })
+    .then(res => res.json())
+    .then(res => {
+      this.setState({
+        movies: res.data.movies,
+        dataLoaded: true,
+      })
+    }).catch(err => console.log(err))
+  }
+
 
   // render data
   // conditional rendering set up checking auth state for dashboard, login, and register routes
@@ -119,6 +131,7 @@ class App extends Component {
             : <Redirect to='/login' />
             )} />
           <Route exact path='/movies' render={() => <MovieList auth={this.state.auth} />} />
+          <Route exact path='/new' render={() => <MovieForm isAdd={true} getAllMovies={this.getAllMovies} />} />
           <Footer />
         </div>
       </Router>

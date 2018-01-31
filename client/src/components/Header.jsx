@@ -27,6 +27,10 @@ const Header = (props) => {
 					<button className="nav-item">Movies</button>
 					</Link>
 
+					<Link to ='/new'>
+					<button className="nav-item">Add A Movie</button>
+					</Link>
+
 					<Link to = '/'>
 					<button className="nav-item" onClick={props.logout}>Logout</button>
 					</Link>
