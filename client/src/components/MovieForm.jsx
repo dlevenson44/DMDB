@@ -29,18 +29,22 @@ class MovieForm extends Component {
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringifiy(data),
+			body: JSON.stringify(data),
 		}).then(res => res.json())
 		.then(res => {
 			console.log(res)
-			this.getAllMovies()
+			this.props.getAllMovies()
+			alert('Succesfully Added!')
 		}).catch(err => console.log(err))
 	}
 
 	render() {
 		console.log(this, 'form MovieForm')
 		return(
-			<form onSubmit={(e) => this.handleFormSubmit('POST', e, this.state)			}>
+			<form onSubmit={(this.props.isAdd
+				? (e) => this.handleFormSubmit('POST', e, this.state)
+				: (e) => this.handleFormSubmit('PUT', e, this.state, this.props.movie.id)
+				)}>
 				<input type="text" name="title" placeholder="Title" value={this.state.title} onChange={this.handleChange} />
 				<input type="text" name="description" placeholder="Description" value={this.state.description} onChange={this.handleChange} />
 				<input type="text" name="genre" placeholder="Genre" value={this.state.genre} onChange={this.handleChange} />

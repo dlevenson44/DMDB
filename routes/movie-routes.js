@@ -6,12 +6,14 @@ const movieRoutes = express.Router()
 const moviesController = require('../controllers/movies-controller')
 
 // index routes
-movieRoutes.get('/', moviesController.index)
-movieRoutes.post('/', moviesController.create)
+movieRoutes.route('/')
+	.get(moviesController.index)
+	.post(moviesController.create)
 
 // show routes
-movieRoutes.get('/:id', moviesController.show)
-movieRoutes.put('/:id', moviesController.update)
-movieRoutes.delete('/:id', moviesController.delete)
+movieRoutes.route('/:id')
+	.get(moviesController.show)
+	.put(moviesController.update)
+	.delete(moviesController.delete)
 
-module.exports = movieRoutes
+module.exports = movieRoutes;

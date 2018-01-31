@@ -13,7 +13,7 @@ class MovieList extends Component {
 			currentlyEditing: null,
 		}
 		this.renderMovieList = this.renderMovieList.bind(this)
-		this.handleFormSubmit = this.handleFormSubmit.bind(this)
+		// this.handleFormSubmit = this.handleFormSubmit.bind(this)
 		this.setEditing = this.setEditing.bind(this)
 		this.getAllMovies = this.getAllMovies.bind(this)
 	}
@@ -39,28 +39,11 @@ class MovieList extends Component {
 		})
 	}
 
-	handleFormSubmit(method, e, data, id) {
-		e.preventDefualt()
-		console.log('clicked')
-		fetch(`/api/movies/${id || ''}`, {
-			method: method,
-			credentials: 'include',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringifiy(data),
-		}).then(res => res.json())
-		.then(res => {
-			console.log(res)
-			this.getAllMovies()
-		}).catch(err => console.log(err))
-	}
-
 	renderMovieList() {
 		if (this.state.dataLoaded) {
 			return this.state.movies.map(movie => {
 				if (movie.id === this.state.currentlyEditing)
-					return <MovieForm movie={movie} handleFormSubmit={this.handleFormSubmit} isAdd={false} key={movie.id} />
+					return <MovieForm movie={movie} getAllMovies={this.getAllMovies} isAdd={false} key={movie.id} />
 				else return <Movie key={movie.id} movie={movie} auth={this.state.auth} setEditing={this.setEditing} />
 			})
 		} else return <p> Loading!</p>
@@ -70,7 +53,7 @@ class MovieList extends Component {
 		return(
 			<div className="movielist">
 				{this.state.auth
-					? <MovieForm isAdd={true} handleFormSubmit={this.handleFormSubmit} />
+					? <MovieForm isAdd={true} getAllMovies={this.getAllMovies} />
 					: ''}
 				{this.renderMovieList()}
 			</div>
@@ -78,4 +61,4 @@ class MovieList extends Component {
 	}
 }
 
-export default MovieList
+export default MovieList;
