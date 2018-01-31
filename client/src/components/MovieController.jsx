@@ -19,6 +19,7 @@ class MovieController extends Component {
 			redirectPath: null,
 		}
 		// bind functions
+		this.handleFormSubmit = this.handleFormSubmit.bind(this)
 		this.movieDelete = this.movieDelete.bind(this)
 	}
 
@@ -76,17 +77,19 @@ class MovieController extends Component {
 				return <MovieForm isadd={true} handleFormSubmit={this.handleFormSubmit} />
 				break;
 			case 'edit':
-				return <MovieForm isAdd={false} handleFormSubmit={this.handleFormSubmit} currentMovie={this.state.currentMovie} />
+				return <MovieForm isAdd={false} handleFormSubmit={this.handleFormSubmit} 
+				currentMovie={this.state.currentMovie} />
 				break;
 			default:
-				return <Redirect push to="/" />
+				return <Redirect push to="/movies" />
 		}
 	}
 
 	render() {
 		return(
-			<div>
-			<h1>hello world</h1>
+			<div className="container">
+				{(this.state.dataLoaded) ? this.renderSwitch() : <p>Loading.....</p>}
+				{this.state.fireRedirect && <Redirect push to={this.state.redirectPath} />}
 			</div>
 			)
 	}
