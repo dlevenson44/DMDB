@@ -20,6 +20,30 @@ class MovieController extends Component {
 		}
 	}
 
+	handleFormSubmit(method, e, data, id) {
+		e.preventDefault()
+		console.log('clicked')
+		fetch(`/api/movies/${id || ''}`, {
+			method: method,
+			credentials: 'include',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(data),
+		}).then(res => res.json())
+		.then(res => {
+			this.setState({
+	          fireRedirect: true,
+	          redirectPath: `/movies/${res.data.movie.id}`,
+			})
+			if (this.props.isAdd) {
+			alert('Succesfully Added!')
+			} else {
+			alert('Succesfully Edited!')
+			}
+		}).catch(err => console.log(err))
+	}
+
 	render() {
 		return(
 			<div>
