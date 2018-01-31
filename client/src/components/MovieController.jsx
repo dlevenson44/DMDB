@@ -99,7 +99,7 @@ class MovieController extends Component {
 				return <MovieList allMovies={this.state.allMovies} />
 				break;
 			case 'show':
-				return <MovieSingle currentMovie={this.state.currentMovie} movieDelete={this.movieDelete} />
+				return <MovieSingle auth={this.props.auth} currentMovie={this.state.currentMovie} movieDelete={this.movieDelete} />
 				break;
 			case 'new':
 				return <MovieForm isadd={true} handleFormSubmit={this.handleFormSubmit} />
