@@ -6,7 +6,7 @@ const Movie = {};
 
 // find all movies query
 Movie.findAll = () => {
-	return db.query('SELECT * FROM moves');
+	return db.query('SELECT * FROM movies');
 }
 
 // find one movie
