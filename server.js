@@ -29,6 +29,11 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(express.static('public'))
 
+app.use((req, res, next) => {
+	console.log('---', req.user, req.path)
+	next()
+})
+
 //app listening on port 1337
 const PORT = process.env.PORT || 1337;
 app.listen(PORT, () => {
