@@ -18,6 +18,8 @@ class MovieController extends Component {
 			fireRedirect: false,
 			redirectPath: null,
 		}
+		// bind functions
+		this.movieDelete = this.movieDelete.bind(this)
 	}
 
 	// handles create and update requests
@@ -60,6 +62,25 @@ class MovieController extends Component {
 				redirectPath: '/movies',
 			})
 		}).catch(err => console.log(err))
+	}
+
+	renderSwitch() {
+		switch(this.state.currentPage) {
+			case 'index':
+				return <MovieList allMovies={this.state.allMovies} />
+				break;
+			case 'show':
+				return <Movie currentMovie={this.state.currentMovie} movieDelete={this.movieDelete} />
+				break;
+			case 'new':
+				return <MovieForm isadd={true} handleFormSubmit={this.handleFormSubmit} />
+				break;
+			case 'edit':
+				return <MovieForm isAdd={false} handleFormSubmit={this.handleFormSubmit} currentMovie={this.state.currentMovie} />
+				break;
+			default:
+				return <Redirect push to="/" />
+		}
 	}
 
 	render() {
