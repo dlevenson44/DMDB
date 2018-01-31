@@ -1,61 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react'
+
 import Movie from './Movie'
-import MovieForm from './MovieForm'
 
-
-class MovieList extends Component {
-	constructor(props) {
-		super()
-		this.state = {
-			movies: null,
-			dataLoaded: false,
-			auth: props.auth,
-			currentlyEditing: null,
-		}
-		this.renderMovieList = this.renderMovieList.bind(this)
-		// this.handleFormSubmit = this.handleFormSubmit.bind(this)
-		this.setEditing = this.setEditing.bind(this)
-		this.getAllMovies = this.getAllMovies.bind(this)
-	}
-
-	componentDidMount() {
-		this.getAllMovies()
-	}
-
-	getAllMovies() {
-		fetch('/api/movies', { credentials: 'include' })
-		.then(res => res.json())
-		.then(res => {
-			this.setState({
-				movies: res.data.movies,
-				dataLoaded: true,
-			})
-		}).catch(err => console.log(err))
-	}
-
-	setEditing(id) {
-		this.setState({
-			currentlyEditing: id,
-		})
-	}
-
-	renderMovieList() {
-		if (this.state.dataLoaded) {
-			return this.state.movies.map(movie => {
-				if (movie.id === this.state.currentlyEditing)
-					return <MovieForm movie={movie} getAllMovies={this.getAllMovies} isAdd={false} key={movie.id} />
-				else return <Movie key={movie.id} movie={movie} auth={this.state.auth} setEditing={this.setEditing} />
-			})
-		} else return <p> Loading!</p>
-	}
-
-	render() {
-		return(
-			<div className="movielist">
-				{this.renderMovieList()}
-			</div>
-			)
-	}
+const MovieList = (props) => {
+	return(
+		<div className="movie-list">
+			{props.allMovies.map(movie => {
+				return <Movie key={movie.id} currentMovie={currentMovie} />
+			})}
+		</div>
+		)
 }
 
 export default MovieList;
