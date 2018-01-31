@@ -23,6 +23,10 @@ class MovieForm extends Component {
 		})
 	}
 
+	componentDidMount() {
+		
+	}
+
 	handleFormSubmit(method, e, data, id) {
 		e.preventDefault()
 		console.log('clicked')
@@ -39,16 +43,15 @@ class MovieForm extends Component {
 	          fireRedirect: true,
 	          redirectPath: `/`,
 			})
-		// 	if (this.props.isAdd) {
-		// 	alert('Succesfully Added!')
-		// } else {
-		// 	alert('Succesfully Edited!')
-		// }
+			if (this.props.isAdd) {
+			alert('Succesfully Added!')
+			} else {
+			alert('Succesfully Edited!')
+			}
 		}).catch(err => console.log(err))
 	}
 
 	render() {
-		console.log(this, 'form MovieForm')
 		return(
 			<form onSubmit={(this.props.isAdd
 				? (e) => this.handleFormSubmit('POST', e, this.state)

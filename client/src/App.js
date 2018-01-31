@@ -21,8 +21,6 @@ class App extends Component {
     this.state = {
       auth: false,
       user: null,
-      fireRedirect: false,
-      redirectPath: null
     }
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)
