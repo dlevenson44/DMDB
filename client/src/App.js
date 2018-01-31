@@ -11,8 +11,9 @@ import Footer from './components/Footer'
 import Dashboard from './components/Dashboard'
 import Login from './components/Login'
 import Register from './components/Register'
-import MovieList from './components/MovieList'
-import MovieForm from './components/MovieForm'
+// import MovieList from './components/MovieList'
+// import MovieForm from './components/MovieForm'
+import MovieController from './components/MovieController'
 
 class App extends Component {
   constructor() {
@@ -118,10 +119,12 @@ class App extends Component {
             ? <Dashboard user={this.state.user} state={this.state}/>
             : <Redirect to='/login' />
             )} />
-          <Route exact path='/movies' render={() => <MovieList auth={this.state.auth} />} />
+          <Route exact path='/movies' render={() => <MovieController currentPage="index" auth={this.state.auth} />} />
+          <Route exact path="/movies/:id" render={props => (<MovieController currentPage="show" currentId={props.match.params.id} />)} />
+          <Route exact path="/movies/edit/:id" redner={props => (<MovieController currentPage="edit" currentId={props.match.params.id} />)} />
           <Route exact path='/new' render={() => (
             this.state.auth
-            ? <MovieForm isAdd={true} getAllMovies={this.getAllMovies} />
+            ? (<MovieController isAdd={true} currentPage="new" auth={this.state.auth} />)
             : <Redirect to='/login' />
             )} />
           <Footer />
