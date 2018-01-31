@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 const MovieSingle = (props) => {
+	console.log(this, 'this is from moviesingle')
 	return(
 		<div className="single-container">
 			<div className="movie-single">

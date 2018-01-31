@@ -23,6 +23,21 @@ class MovieController extends Component {
 		this.movieDelete = this.movieDelete.bind(this)
 	}
 
+	componentDidMount() {
+		if (this.state.currentPage === 'index') {
+			// console.log(this, 'from index in componentDidMount')			
+			fetch('/api/movies')			
+				.then(res => res.json())
+				.then(res => {
+					console.log(res, 'res from index in componentDidMount')
+					this.setState({
+						allMovies: res.data.movies,
+						dataLoaded: true,
+					})
+				}).catch(err => console.log(err))
+		} 
+	}
+
 	// handles create and update requests
 	handleFormSubmit(method, e, data, id) {
 		e.preventDefault()
@@ -86,6 +101,7 @@ class MovieController extends Component {
 	}
 
 	render() {
+		console.log(this, 'this is moviecontroller')
 		return(
 			<div className="container">
 				{(this.state.dataLoaded) ? this.renderSwitch() : <p>Loading.....</p>}
