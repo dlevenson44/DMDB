@@ -4,7 +4,7 @@ class Login extends Component {
 	constructor() {
 		super()
 		// initiate page state
-		this.setState = {
+		this.state = {
 			username: '',
 			password: '',
 		}

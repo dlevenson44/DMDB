@@ -18,7 +18,7 @@ authRouter.post('/login', passport.authenticate('local', {
 // handle routing after login attempt
 authRouter.get('/verify', (req, res) => {
 	//if authentication is successful
-	if (req.useR) return res.status(200).json({
+	if (req.user) return res.status(200).json({
 		message: 'ok',
 		auth: true,
 		data: {

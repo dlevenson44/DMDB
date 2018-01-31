@@ -50,6 +50,7 @@ class App extends Component {
   handleRegisterSubmit(e, data) {
     // prevent page refresh
     e.preventDefault()
+    console.log(data, 'from handle register')
     // create account POST
     fetch('/api/auth/register', {
       method: 'POST',
