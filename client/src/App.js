@@ -118,7 +118,7 @@ class App extends Component {
             ? <Redirect to='/login' />
             : <Dashboard user={this.state.user} />
             )} />
-          <Route exact path='/movies' render={() => <MovieLiust auth={this.state.auth} />} />
+          <Route exact path='/movies' render={() => <MovieList auth={this.state.auth} />} />
           <Footer />
         </div>
       </Router>

@@ -48,7 +48,7 @@ class MovieList extends Component {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringifiy(data),
-		)}.then(res => res.json())
+		}).then(res => res.json())
 		.then(res => {
 			console.log(res)
 			this.getAllMovies()
