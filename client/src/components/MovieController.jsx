@@ -35,7 +35,20 @@ class MovieController extends Component {
 						dataLoaded: true,
 					})
 				}).catch(err => console.log(err))
-		} 
+		} else if (this.state.currentPage === 'show' || this.state.currentPage === 'edit') {
+			fetch(`/api/movies/${this.state.currentId}`)
+				.then(res => res.json())
+				.then(res => {
+					this.setState({
+						currentMovie: res.data.movie,
+						dataLoaded: true,
+					})
+				}).catch(err => console.log(err))
+		} else if (this.state.currentPage === 'new') {
+			this.setState({
+				dataLoaded: true,
+			})
+		}
 	}
 
 	// handles create and update requests
