@@ -22,5 +22,25 @@ User.create = user => {
 		`, [user.username, user.email, user.password_digest]);
 };
 
+// update user
+User.update = (user, id) => {
+	return db.one(`
+		UPDATE users SET
+		username = $1,
+		email = $2,
+		password_digest = $3
+		WHERE id = $4
+		RETURNING *
+		`, [user.username, user.email, user.password_digest]);
+}
+
+// delete user
+User.destroy = (id) => {
+	return db.none(`
+		DELETE FROM users
+		WHERE ID = $1
+		`, [id]);
+}
+
 // export model
 module.exports = User;

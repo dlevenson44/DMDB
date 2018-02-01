@@ -40,25 +40,6 @@ movieController.create = (req, res, next) => {
 	}).catch(next)
 }
 
-// movieController.update = (req, res, next) => {
-// 	Movie.findById(req.params.id)
-// 	.then(movie => {
-// 		return movie.update({
-// 			title: req.body.title,
-// 			description: req.body.description,
-// 			genre: req.body.genre,
-// 		})
-// 	}).then(movie => {
-// 		res.status(202).json({
-// 			message: 'Successfully updated movie',
-// 			data: {
-// 				movie,
-// 			},
-// 		})
-// 	}).catch(next)
-// }
-
-
 // update existing movie entry
 movieController.update = (req, res, next) => {
 	Movie.update({
