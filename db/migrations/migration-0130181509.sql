@@ -12,5 +12,6 @@ CREATE TABLE IF NOT EXISTS movies (
 	title VARCHAR(225),
 	description TEXT,
 	genre VARCHAR(225),
+	image TEXT,
 	user_id INT REFERENCES users(id)
 );
