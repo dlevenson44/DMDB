@@ -10,7 +10,6 @@ class MovieForm extends Component {
 			description: props.currentMovie ? props.currentMovie.description : '',
 		}
 		this.handleChange = this.handleChange.bind(this)
-				console.log(props, 'are props from form')
 	}
 
 	handleChange(e) {
