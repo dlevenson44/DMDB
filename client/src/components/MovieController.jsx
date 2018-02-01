@@ -102,7 +102,7 @@ class MovieController extends Component {
 				return <MovieSingle auth={this.props.auth} currentMovie={this.state.currentMovie} movieDelete={this.movieDelete} />
 				break;
 			case 'new':
-				return <MovieForm isadd={true} handleFormSubmit={this.handleFormSubmit} />
+				return <MovieForm isAdd={true} handleFormSubmit={this.handleFormSubmit} />
 				break;
 			case 'edit':
 				return <MovieForm isAdd={false} handleFormSubmit={this.handleFormSubmit} 

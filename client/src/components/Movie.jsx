@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Movie = (props) => {
-	console.log(this, 'this is from movie')
+	// console.log(this, 'this is from movie')
 	return(		
 		<div className="movie">
 			<h1 className="movie-header">{props.movie.title}</h1>
