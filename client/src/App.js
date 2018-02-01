@@ -121,7 +121,7 @@ class App extends Component {
             )} />
           <Route exact path='/movies' render={() => <MovieController currentPage="index" auth={this.state.auth} />} />
           <Route exact path="/movies/:id" auth={this.props.auth} render={props => (<MovieController currentPage="show" auth={this.state.auth} currentId={props.match.params.id} />)} />
-          <Route exact path="/movies/edit/:id" redner={props => (<MovieController currentPage="edit" currentId={props.match.params.id} />)} />
+          <Route exact path="/movies/edit/:id" render={props => (<MovieController currentPage="edit" currentId={props.match.params.id} />)} />
           <Route exact path='/new' render={() => (
             this.state.auth
             ? (<MovieController isAdd={true} currentPage="new" auth={this.state.auth} />)
