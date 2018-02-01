@@ -63,12 +63,12 @@ class MovieController extends Component {
 			},
 			body: JSON.stringify(data),
 		}).then(res => res.json(console.log(res, 'from edit thing')))
-		
+
 		.then(res => {			
 			this.setState({
 	          fireRedirect: true,
 	          //redirect path after click
-	          redirectPath: `/movies/${res.data.movie.id}`,
+	          redirectPath: `/movies/`,
 			})
 			//alert user on successful change
 			if (this.props.isAdd) {

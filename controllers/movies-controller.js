@@ -40,38 +40,38 @@ movieController.create = (req, res, next) => {
 	}).catch(next)
 }
 
-movieController.update = (req, res, next) => {
-	Movie.findById(req.params.id)
-	.then(movie => {
-		return movie.update({
-			title: req.body.title,
-			description: req.body.description,
-			genre: req.body.genre,
-		})
-	}).then(movie => {
-		res.status(202).json({
-			message: 'Successfully updated movie',
-			data: {
-				movie,
-			},
-		})
-	}).catch(next)
-}
-
-
-// update existing movie entry
 // movieController.update = (req, res, next) => {
-// 	Movie.update({
-// 		title: req.body.title,
-// 		description: req.body.description,
-// 		genre: req.body.genre,
-// 	}, req.params.id).then(movie => {
-// 		res.json({
+// 	Movie.findById(req.params.id)
+// 	.then(movie => {
+// 		return movie.update({
+// 			title: req.body.title,
+// 			description: req.body.description,
+// 			genre: req.body.genre,
+// 		})
+// 	}).then(movie => {
+// 		res.status(202).json({
 // 			message: 'Successfully updated movie',
-// 			data: { movie },
+// 			data: {
+// 				movie,
+// 			},
 // 		})
 // 	}).catch(next)
 // }
+
+
+// update existing movie entry
+movieController.update = (req, res, next) => {
+	Movie.update({
+		title: req.body.title,
+		description: req.body.description,
+		genre: req.body.genre,
+	}, req.params.id).then(movie => {
+		res.json({
+			message: 'Successfully updated movie',
+			data: { movie },
+		})
+	}).catch(next)
+}
 
 // delete movie entry
 movieController.delete = (req, res, next) => {
