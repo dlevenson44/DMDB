@@ -22,29 +22,29 @@ class MovieForm extends Component {
 	}
 
 
-	handleFormSubmit(method, e, data, id) {
-		e.preventDefault()
-		console.log('clicked')
-		fetch(`/api/movies/${id || ''}`, {
-			method: method,
-			credentials: 'include',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(data),
-		}).then(res => res.json())
-		.then(res => {
-			this.setState({
-	          fireRedirect: true,
-	          redirectPath: `/movies`,
-			})
-			if (this.props.isAdd) {
-			alert('Succesfully Added!')
-			} else {
-			alert('Succesfully Edited!')
-			}
-		}).catch(err => console.log(err))
-	}
+	// handleFormSubmit(method, e, data, id) {
+	// 	e.preventDefault()
+	// 	console.log('clicked')
+	// 	fetch(`/api/movies/${id || ''}`, {
+	// 		method: method,
+	// 		credentials: 'include',
+	// 		headers: {
+	// 			'Content-Type': 'application/json',
+	// 		},
+	// 		body: JSON.stringify(data),
+	// 	}).then(res => res.json())
+	// 	.then(res => {
+	// 		this.setState({
+	//           fireRedirect: true,
+	//           redirectPath: `/movies`,
+	// 		})
+	// 		if (this.props.isAdd) {
+	// 		alert('Succesfully Added!')
+	// 		} else {
+	// 		alert('Succesfully Edited!')
+	// 		}
+	// 	}).catch(err => console.log(err))
+	// }
 
 	render() {
 		console.log(this, 'is this from form')
@@ -52,8 +52,8 @@ class MovieForm extends Component {
 		return(
 			<div className="form">
 				<form onSubmit={(this.props.isAdd
-					? (e) => this.handleFormSubmit('POST', e, this.state)
-					: (e) => this.handleFormSubmit('PUT', e, this.state, this.props.movie.id)
+					? (e) => this.props.handleFormSubmit('POST', e, this.state)
+					: (e) => this.props.handleFormSubmit('PUT', e, this.state, this.props.movie.id)
 					)}>
 					<input type="text" name="title" placeholder="Title" value={this.state.title} onChange={this.handleChange} required />
 					<input type="text" name="description" placeholder="Description" value={this.state.description} onChange={this.handleChange} required />
