@@ -9,8 +9,7 @@ class Dashboard extends Component {
 		console.log(this, 'from dashboard')
 		console.log(this.props)
 		return(
-			<div>
-				<p>{this.props.user.username}</p>
+			<div>				
 			</div>
 		)
 	}

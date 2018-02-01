@@ -4,7 +4,7 @@ const db = require('../db/config')
 // initiate User object
 const User = {}
 
-// find by username function
+// find username function
 User.findByUserName = userName => {
 	return db.oneOrNone(`
 		SELECT * FROM users

@@ -73,6 +73,11 @@ class App extends Component {
     }).catch(err => console.log(err))
   }
 
+  // handleUpdateSubmit(e, data) {
+  //   e.preventDefault()
+  //   fetch(`/api/auth/${}`)
+  // }
+
   logout() {
     fetch('/api/auth/logout', {
       credentials: 'include',

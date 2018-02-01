@@ -47,4 +47,10 @@ authRouter.get('/logout', (req, res) => {
 	})
 })
 
+// handle profile update/delete
+authRouter.route('/dashboard')
+	.get(usersController.show)
+	.put(usersController.update)
+	.delete(usersController.delete)
+
 module.exports = authRouter;
