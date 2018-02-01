@@ -59,7 +59,7 @@ usersController.update = (req, res, next) => {
 usersController.delete = (req, res, next) => {
 	User.destroy(req.params.id)
 	.then(() => {
-		res..json({
+		res.json({
 			message: 'Successfully deleted user',
 		})
 	}).catch(next)
