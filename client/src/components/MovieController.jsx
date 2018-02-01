@@ -62,7 +62,7 @@ class MovieController extends Component {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(data),
-		}).then(res => res.json(console.log(res, 'from edit thing')))
+		}).then(res => res.json())
 
 		.then(res => {			
 			this.setState({

@@ -22,10 +22,14 @@ class App extends Component {
     this.state = {
       auth: false,
       user: null,
+      fireRedirect: false,
+      redirectPath: null,
     }
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)
+    this.handleUpdateSubmit = this.handleUpdateSubmit.bind(this)
     this.logout = this.logout.bind(this)
+    this.userDelete = this.userDelete.bind(this)
   }
 
   handleLoginSubmit(e, data) {
@@ -75,6 +79,7 @@ class App extends Component {
 
   handleUpdateSubmit(e, data, id) {
     e.preventDefault()
+    console.log('clicked')
     fetch(`/api/auth/${id}`, {
       method: 'PUT',
       credentials: 'include',
@@ -92,7 +97,7 @@ class App extends Component {
   }
 
   userDelete(id) {
-    fetch(`/api/auth/${id}`, {
+    fetch(`/api/auth/verify/${id}`, {
       method: 'DELETE',
     }).then(res => res.json())
     .then(res => {
@@ -146,7 +151,7 @@ class App extends Component {
             )} />
           <Route exact path='/dashboard' render={() => (
             this.state.auth
-            ? <Dashboard user={this.state.user} state={this.state}/>
+            ? <Dashboard user={this.state.user} state={this.state} handleUpdateSubmit={this.handleUpdateSubmit} userDelete={this.userDelete} />
             : <Redirect to='/login' />
             )} />
           <Route exact path='/movies' render={() => <MovieController currentPage="index" auth={this.state.auth} />} />

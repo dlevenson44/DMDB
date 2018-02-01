@@ -8,6 +8,12 @@ const usersController = require('../controllers/users-controller')
 // on /register page bring in create function from user controller
 authRouter.post('/register', usersController.create)
 
+
+// delete/update account info
+authRouter.put('/dashboard', usersController.update)
+authRouter.delete('/dashboard', usersController.delete)
+
+
 // allow users to login on /login
 authRouter.post('/login', passport.authenticate('local', {
 	successRedirect: '/api/auth/verify',
@@ -47,10 +53,12 @@ authRouter.get('/logout', (req, res) => {
 	})
 })
 
+
+
 // handle profile update/delete
-authRouter.route('/dashboard')
-	.get(usersController.show)
-	.put(usersController.update)
-	.delete(usersController.delete)
+// authRouter.route('/dashboard')
+// 	.get(usersController.show)
+// 	.put(usersController.update)
+// 	.delete(usersController.delete)
 
 module.exports = authRouter;
