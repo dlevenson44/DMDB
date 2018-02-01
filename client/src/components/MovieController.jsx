@@ -62,8 +62,9 @@ class MovieController extends Component {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(data),
-		}).then(res => res.json())
-		.then(res => {
+		}).then(res => res.json(console.log(res, 'from edit thing')))
+		
+		.then(res => {			
 			this.setState({
 	          fireRedirect: true,
 	          //redirect path after click
