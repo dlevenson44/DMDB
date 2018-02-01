@@ -23,7 +23,7 @@ class Dashboard extends Component {
 		console.log(this, 'from dashboard')
 		return(
 			<div>
-			<form onSubmit={(e) => this.props.handleProfileUpdate('PUT', e, this.state, this.props.currentUser.id)}>
+			<form onSubmit={(e) => this.props.handleUpdateSubmit('PUT', e, this.state, this.props.currentUser.id)}>
 				<input type="text" name="username" placeholder={this.state.username} value={this.state.username} onChange={this.handleChange} />
 				<input type="password" name="password_digest" placeholder={this.state.password_digest} value={this.state.password_digest} onChange={this.handleChange} />
 				<input type="email" name="email" placeholder={this.state.email} value={this.state.email} onChange={this.handleChange} />

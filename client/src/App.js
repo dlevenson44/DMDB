@@ -73,10 +73,35 @@ class App extends Component {
     }).catch(err => console.log(err))
   }
 
-  // handleUpdateSubmit(e, data) {
-  //   e.preventDefault()
-  //   fetch(`/api/auth/${}`)
-  // }
+  handleUpdateSubmit(e, data, id) {
+    e.preventDefault()
+    fetch(`/api/auth/${id}`, {
+      method: 'PUT',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }).then(res => res.json())
+    .then(res => {
+      this.setState({
+        fireRedirect: true,
+        redirectPath: '/dashboard'
+      })
+    }).catch(err => console.log(err))
+  }
+
+  userDelete(id) {
+    fetch(`/api/auth/${id}`, {
+      method: 'DELETE',
+    }).then(res => res.json())
+    .then(res => {
+      this.setState({
+        fireRedirect: true,
+        redirectPath: '/'
+      })
+    }).catch(err => console.log(err))
+  }
 
   logout() {
     fetch('/api/auth/logout', {
