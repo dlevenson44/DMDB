@@ -103,7 +103,8 @@ class App extends Component {
     .then(res => {
       this.setState({
         fireRedirect: true,
-        redirectPath: '/'
+        redirectPath: '/',
+        auth: false
       })
     }).catch(err => console.log(err))
   }

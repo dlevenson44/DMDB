@@ -41,12 +41,12 @@ usersController.show = (req, res, next) => {
 
 // update profile info
 usersController.update = (req, res, next) => {
-	const salt = bcrypt.genSaltSync()
-	const hash = bcrypt.hashSync(req.body.password, salt)
+	// const salt = bcrypt.genSaltSync()
+	// const hash = bcrypt.hashSync(req.body.password, salt)
 	User.update({
 		username: req.body.username,
 		email: req.body.email,
-		password_digest: hash,
+		password_digest: req.body.password_digest,
 	}, req.params.id).then(user => {
 		res.json({
 			message: 'Successfully updated user',
