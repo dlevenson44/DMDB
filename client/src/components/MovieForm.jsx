@@ -8,6 +8,7 @@ class MovieForm extends Component {
 			title: props.currentMovie ? props.currentMovie.title : '',
 			genre: props.currentMovie ? props.currentMovie.genre : '',
 			description: props.currentMovie ? props.currentMovie.description : '',
+			image: props.currentMovie ? props.currentMovie.image : '',
 		}
 		this.handleChange = this.handleChange.bind(this)
 	}
@@ -31,6 +32,7 @@ class MovieForm extends Component {
 					<input type="text" name="title" placeholder="Title" value={this.state.title} onChange={this.handleChange} required />
 					<input type="text" name="description" placeholder="Description" value={this.state.description} onChange={this.handleChange} required />
 					<input type="text" name="genre" placeholder="Genre" value={this.state.genre} onChange={this.handleChange} required />
+					<input type="url" name="image" placeholder="Enter image URL here!" value={this.state.image} onChange={this.handleChange} required />
 					<input type="submit" value={this.props.isAdd ? 'Add it!' : 'Edit it!'} />
 				</form>
 			</div>
