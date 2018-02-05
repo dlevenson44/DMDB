@@ -30,7 +30,7 @@ usersController.create = (req, res, next) => {
 
 // display profile info
 usersController.show = (req, res, next) => {
-	User.findById(req.params.id)
+	User.findByUserName(req.params.id)
 	.then(user => {
 		res.json({
 			message: 'ok',
