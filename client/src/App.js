@@ -106,6 +106,7 @@ class App extends Component {
         redirectPath: '/',
         auth: false
       })
+      alert('Profile deleted!')
     }).catch(err => console.log(err))
   }
 

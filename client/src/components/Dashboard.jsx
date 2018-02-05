@@ -36,6 +36,7 @@ class Dashboard extends Component {
 	        fireRedirect: true,
 	        redirectPath: '/dashboard'
 	      })
+	      alert('Profile Updated!')
 	    }).catch(err => console.log(err))
 	  }
 
