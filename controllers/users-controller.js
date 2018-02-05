@@ -41,8 +41,8 @@ usersController.show = (req, res, next) => {
 
 // update profile info
 usersController.update = (req, res, next) => {
-	// const salt = bcrypt.genSaltSync()
-	// const hash = bcrypt.hashSync(req.body.password, salt)
+	const salt = bcrypt.genSaltSync()
+	const hash = bcrypt.hashSync(req.body.password, salt)
 	User.update({
 		username: req.body.username,
 		email: req.body.email,

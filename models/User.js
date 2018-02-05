@@ -31,7 +31,7 @@ User.update = (user, id) => {
 		password_digest = $3
 		WHERE id = $4
 		RETURNING *
-		`, [user.username, user.email, user.password_digest]);
+		`, [user.username, user.email, user.password_digest, id]);
 }
 
 // delete user
