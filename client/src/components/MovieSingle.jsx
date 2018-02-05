@@ -7,6 +7,7 @@ const MovieSingle = (props) => {
 	return(
 		<div className="single-container">
 			<div className="movie-single">
+				<img src={props.currentMovie.image} />
 				<h1 className="movie-header">{props.currentMovie.title}</h1>
 				<h3 className="movie-subhead">{props.currentMovie.genre}</h3>
 				<p className="movie-desc">{props.currentMovie.description}</p>

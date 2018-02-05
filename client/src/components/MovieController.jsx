@@ -24,12 +24,10 @@ class MovieController extends Component {
 	}
 
 	componentDidMount() {
-		if (this.state.currentPage === 'index') {
-			// console.log(this, 'from index in componentDidMount')			
+		if (this.state.currentPage === 'index') {		
 			fetch('/api/movies')			
 				.then(res => res.json())
 				.then(res => {
-					console.log(res, 'res from index in componentDidMount')
 					this.setState({
 						allMovies: res.data.movies,
 						dataLoaded: true,
@@ -54,7 +52,6 @@ class MovieController extends Component {
 	// handles create and update requests
 	handleFormSubmit(method, e, data, id) {
 		e.preventDefault()
-		console.log('clicked')
 		fetch(`/api/movies/${id || ''}`, {
 			method: method,
 			credentials: 'include',
@@ -85,7 +82,6 @@ class MovieController extends Component {
 			method: 'DELETE',
 		}).then(res => res.json())
 		.then(res => {
-			console.log(res)
 			// set redirect path after deletion
 			this.setState({
 				fireRedirect: true,
@@ -115,7 +111,6 @@ class MovieController extends Component {
 	}
 
 	render() {
-		console.log(this, 'this is moviecontroller')
 		return(
 			<div className="container">
 				{(this.state.dataLoaded) ? this.renderSwitch() : <p>Loading.....</p>}
