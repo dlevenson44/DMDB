@@ -34,7 +34,7 @@ Movie.update = (movie, id) => {
 		title = $1, 
 		description = $2, 
 		genre = $3,
-		image = $4,
+		image = $4
 		WHERE id = $5
 		RETURNING *
 		`, [movie.title, movie.description, movie.genre, movie.image, id]);
