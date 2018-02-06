@@ -32,6 +32,7 @@ movieController.create = (req, res, next) => {
 		title: req.body.title,
 		description: req.body.description,
 		genre: req.body.genre,
+		image: req.body.image,
 	}, req.user.id).then(movie => {
 		res.json({
 			message: 'Successfully added movie',
@@ -46,6 +47,7 @@ movieController.update = (req, res, next) => {
 		title: req.body.title,
 		description: req.body.description,
 		genre: req.body.genre,
+		image: req.body.image,
 	}, req.params.id).then(movie => {
 		res.json({
 			message: 'Successfully updated movie',
