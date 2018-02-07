@@ -105,3 +105,25 @@ body {
 	height: 550px;
 	width: 550px
 }
+
+.movielist-container {
+	height: 700px;
+	overflow: auto;
+}
+
+.movie {
+	margin-top: 10px;
+}
+
+#movie-header {
+	color: #EEB200;
+	font-family: 'Anton', sans-serif;
+	font-size: 20px;
+	margin-bottom: 5px
+}
+
+#movie-genre {
+	color: #EEB200;
+	font-family: 'Anton', sans-serif;
+
+}
