@@ -139,7 +139,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-        <Header logout={this.logout} />
+        <Header logout={this.logout} auth={this.state.auth} />
           <Route exact path='/' component={Home} />
           <Route exact path='/login' render={() => (
             this.state.auth
