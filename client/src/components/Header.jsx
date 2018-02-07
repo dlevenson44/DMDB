@@ -11,7 +11,7 @@ const Header = (props) => {
 			{props.auth 
 				? (	
 					<div>
-					<div className="hidden-md-down">
+					<div className="hidden-sm-down">
 						<ul className="nav justify-content-center">
 							<li className="nav-item">
 								<Link to = '/' className="nav link">
