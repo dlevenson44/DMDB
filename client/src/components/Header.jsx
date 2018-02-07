@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 // // stateless component
 const Header = (props) => {
-	console.log(props, 'props from header')
 	return (
 		<div className="header-container">
 			<h1 className="text-xl-center" id="header-header">DMDB</h1>
@@ -38,7 +37,7 @@ const Header = (props) => {
 							</li>
 
 							<li className="nav-item" id="nav-li">
-								<Link to='/' className="nav link">
+								<Link to='/'>
 								<button className="nav-item" onClick={props.logout} id="nav">Logout</button>
 								</Link>
 							</li>

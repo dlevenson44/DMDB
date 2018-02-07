@@ -25,24 +25,12 @@ class Login extends Component {
 
 	render() {
 		return(
-			<div className="login-container">
+			<div>
 				<form onSubmit={(e) => this.props.handleLoginSubmit(e, this.state)}>
-					<div className="form-group row">
-						<label for="text-label" className="col-1 col-form-label" id="login-label">Username:</label>
-						<div className="col-3">
-							<input className="form-control" type="text" value={this.state.username} placeholder="Username" onChange={this.handleInputChange} id="login-form" />
-						</div>
-					</div>
-					<div className="form-group row">
-						<label for="text-label" className="col-1 col-form-label" id="login-label">Password:</label>
-						<div className="col-3">
-							<input className="form-control" type="text" value={this.state.username} placeholder="Username" onChange={this.handleInputChange} id="login-form" />
-						</div>
-					</div>
-					<div className="form-group row">					
-						<div className="col-2" id="login-submit">
-						<input className="form-control" type="submit" value="Log in!" />
-						</div>
+					<div className="login-container">
+					<input type="text" name="username" value={this.state.username} placeholder="Username" onChange={this.handleInputChange} id="login-field" />
+					<input type="password" name="password" value={this.state.password} placeholder="Password" onChange={this.handleInputChange} id="login-field1" />
+					<input type="submit" value="Log in!" id="login-submit" />
 					</div>
 				</form>
 			</div>
@@ -51,3 +39,5 @@ class Login extends Component {
 }
 
 export default Login;
+
+

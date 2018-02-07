@@ -4,8 +4,8 @@ class Dashboard extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			username: props.currentUser ? props.currentUser.username : '',
-			password_digest: props.currentUser ? props.currentUser.password_digest : '',
+			username: props.user ? props.user.username : '',
+			password_digest: props.user ? props.user.password_digest : '',
 			email: props.user ? props.user.email : '',
 		}
 		this.handleChange = this.handleChange.bind(this)

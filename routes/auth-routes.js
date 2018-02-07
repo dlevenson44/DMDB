@@ -35,12 +35,6 @@ authRouter.get('/verify', (req, res) => {
 	})
 })
 
-authRouter.route('/:id')
-	.get(usersController.show)
-	.put(usersController.update)
-	.delete(usersController.delete)
-
-
 //handle logout
 authRouter.get('/logout', (req, res) => {
 	req.logout()
@@ -52,5 +46,10 @@ authRouter.get('/logout', (req, res) => {
 		}
 	})
 })
+
+authRouter.route('/:id')
+	.get(usersController.show)
+	.put(usersController.update)
+	.delete(usersController.delete)
 
 module.exports = authRouter;

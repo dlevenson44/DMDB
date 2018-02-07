@@ -115,8 +115,9 @@ class App extends Component {
       credentials: 'include',
     }).then(res => res.json())
     .then(res => {
+      console.log(res, 'from logout')
       this.setState({
-        auth: res.auth,
+        auth: false,
         user: res.data.user,
       })
     }).catch(err => console.log(err))
