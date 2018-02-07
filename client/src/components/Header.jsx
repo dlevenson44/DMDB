@@ -7,11 +7,11 @@ const Header = (props) => {
 	console.log(props, 'props from header')
 	return (
 		<div className="header-container">
-			<h1 className="header-header">Dan Movie Database</h1>
+			<h1 className="text-xl-center" id="header-header">Dan Movie Database</h1>
 			{props.auth 
 				? (	
 					<div>
-					<div className="hidden-sm-down">
+					<div className="hidden-sm-down" id="nav-container">
 						<ul className="nav justify-content-center">
 							<li className="nav-item">
 								<Link to = '/' className="nav link">
@@ -44,7 +44,7 @@ const Header = (props) => {
 							</li>
 						</ul>
 					</div>
-					<div className="hidden-md-up">
+					<div className="hidden-md-up" id="nav-container">
 						<div className="dropdown">
 							<button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Menu
@@ -75,7 +75,7 @@ const Header = (props) => {
 					</div>
 				) : (
 					<div>
-					<div className="hidden-md-down">
+					<div className="hidden-sm-down" id="nav-container">
 						<ul className="nav justify-content-center">
 							<li className="nav-item">
 								<Link to = '/' className="nav link">
@@ -102,7 +102,7 @@ const Header = (props) => {
 							</li>
 						</ul>
 					</div>
-					<div className="hidden-md-up">
+					<div className="hidden-md-up" id="nav-container">
 						<div className="dropdown">
 							<button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Menu
