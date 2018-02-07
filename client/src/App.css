@@ -125,5 +125,23 @@ body {
 #movie-genre {
 	color: #EEB200;
 	font-family: 'Anton', sans-serif;
+}
 
+.login-container {
+	margin-left: 35%;
+	margin-top: 10%;
+}
+
+#login-form {
+	margin-left: 35px;
+}
+
+#login-label {
+	color: #EEB200;
+	font-size: 20px;	
+	font-weight: bold;
+}
+
+#login-submit {
+	margin-left: 10%;
 }
