@@ -7,7 +7,7 @@ const Header = (props) => {
 	console.log(props, 'props from header')
 	return (
 		<div className="header-container">
-			<h1 className="text-xl-center" id="header-header">Dan Movie Database</h1>
+			<h1 className="text-xl-center" id="header-header">DMDB</h1>
 			{props.auth 
 				? (	
 					<div>
@@ -21,25 +21,25 @@ const Header = (props) => {
 
 							<li className="nav-item" id="nav-li">
 								<Link to='/movies' className="nav link">
-								<button className="nav link">Movies</button>
+								<button className="nav link" id="nav">Movies</button>
 								</Link>
 							</li>
 
 							<li className="nav-item" id="nav-li">
 								<Link to='/dashboard' className="nav link">
-								<button className="nav link">Profile</button>
+								<button className="nav link" id="nav">Profile</button>
 								</Link>
 							</li>
 
 							<li className="nav-item" id="nav-li">
 								<Link to='/new' className="nav link">
-								<button className="nav link">Add A Movie</button>
+								<button className="nav link" id="nav">Add A Movie</button>
 								</Link>
 							</li>
 
 							<li className="nav-item" id="nav-li">
 								<Link to='/' className="nav link">
-								<button className="nav-item" onClick={props.logout}>Logout</button>
+								<button className="nav-item" onClick={props.logout} id="nav">Logout</button>
 								</Link>
 							</li>
 						</ul>
@@ -79,25 +79,25 @@ const Header = (props) => {
 						<ul className="nav justify-content-center">
 							<li className="nav-item">
 								<Link to = '/' className="nav link" id="nav-li">
-								<button className="nav link">Home</button>
+								<button className="nav link" id="nav">Home</button>
 								</Link>
 							</li>
 
 							<li className="nav-item">
 								<Link to='/movies' className="nav link" id="nav-li">
-								<button className="nav link">Movies</button>
+								<button className="nav link" id="nav">Movies</button>
 								</Link>
 							</li>
 
 							<li className="nav-item">
 								<Link to='/login' className="nav link" id="nav-li">
-								<button className="nav link">Login</button>
+								<button className="nav link" id="nav">Login</button>
 								</Link>
 							</li>
 
 							<li className="nav-item">
 								<Link to='/register' className="nav link" id="nav-li">
-								<button className="nav link">Register</button>
+								<button className="nav link" id="nav">Register</button>
 								</Link>
 							</li>
 						</ul>

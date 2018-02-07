@@ -69,6 +69,11 @@ body {
 
 #header-header {
 	margin-top: 1%;
+	color: #EEB200;
+	font-family: 'Anton', sans-serif;
+	font-size: 54px;
+	font-weight: bold;
+	letter-spacing: 3px
 }
 
 #nav-container {
@@ -79,9 +84,21 @@ body {
 	padding: 5px;
 }
 
+#nav {
+	background: #320546;
+	color: #EEB200;
+	border: #320546 .5px solid;
+	padding-left: 2px;
+}
+
+#nav:hover {
+	background: #EEB200;
+	color: #320546;
+}
+
 .home-container {
 	margin-left: 27.5%;
-	margin-top: 10%;
+	margin-top: 5%;
 }
 
 #img1 {
