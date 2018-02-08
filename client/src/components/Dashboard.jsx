@@ -49,10 +49,10 @@ class Dashboard extends Component {
 				<input type="text" name="username" placeholder={this.state.username} value={this.state.username} onChange={this.handleChange} className="account-field" />
 				<input type="password" name="password_digest" placeholder={this.state.password_digest} value={this.state.password_digest} onChange={this.handleChange} className="account-field" />
 				<input type="email" name="email" placeholder={this.state.email} value={this.state.email} onChange={this.handleChange} className="account-field" />
-				<input type="submit" value="Update Profile" />
+				<input type="submit" value="Update Profile" id="update-submit" />
 				</div>
 			</form>
-			<button className="delete" onClick={() => this.props.userDelete(this.props.user.id)}>Delete User</button>
+			<button id="delete-submit" onClick={() => this.props.userDelete(this.props.user.id)}>Delete Account</button>
 			</div>
 		)
 	}

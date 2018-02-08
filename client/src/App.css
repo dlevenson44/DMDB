@@ -150,3 +150,13 @@ body {
 	margin-left: 15%;
 	width: 130px;
 }
+
+#update-submit {
+	margin-left: 15%;
+	width: 130px;
+}
+
+#delete-submit {
+	margin-left: 47%;
+	margin-top: 10px;
+}
