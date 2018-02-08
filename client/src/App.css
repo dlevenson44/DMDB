@@ -107,6 +107,7 @@ body {
 }
 
 .movielist-container {
+	margin-top: 25px;
 	height: 700px;
 	overflow: auto;
 }
@@ -135,7 +136,7 @@ body {
 	width: 400px;
 }
 
-#login-field {
+.account-field {
 	width: 250px;
 	margin-bottom: 25px;
 }
@@ -146,6 +147,6 @@ body {
 }
 
 #register-submit {
-	margin-left: 20%;
+	margin-left: 15%;
 	width: 130px;
 }

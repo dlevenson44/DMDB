@@ -42,14 +42,15 @@ class Dashboard extends Component {
 	  }
 
 	render() {
-		console.log(this, 'from dashboard')
 		return(
 			<div>
 			<form onSubmit={(e) => this.handleUpdateSubmit(e, this.state, this.props.user.id)}>
-				<input type="text" name="username" placeholder={this.state.username} value={this.state.username} onChange={this.handleChange} />
-				<input type="password" name="password_digest" placeholder={this.state.password_digest} value={this.state.password_digest} onChange={this.handleChange} />
-				<input type="email" name="email" placeholder={this.state.email} value={this.state.email} onChange={this.handleChange} />
+				<div className="login-container">
+				<input type="text" name="username" placeholder={this.state.username} value={this.state.username} onChange={this.handleChange} className="account-field" />
+				<input type="password" name="password_digest" placeholder={this.state.password_digest} value={this.state.password_digest} onChange={this.handleChange} className="account-field" />
+				<input type="email" name="email" placeholder={this.state.email} value={this.state.email} onChange={this.handleChange} className="account-field" />
 				<input type="submit" value="Update Profile" />
+				</div>
 			</form>
 			<button className="delete" onClick={() => this.props.userDelete(this.props.user.id)}>Delete User</button>
 			</div>
