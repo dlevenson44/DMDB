@@ -1,8 +1,8 @@
 {
-  "name": "movies_app",
+  "name": "dmdb",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:dlevenson44/movies_app.git",
+  "repository": "git@github.com:dlevenson44/DMDB.git",
   "author": "Daniel Levenson <daniellevenson4@gmail.com>",
   "license": "MIT",
   "dependencies": {
