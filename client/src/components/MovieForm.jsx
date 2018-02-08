@@ -22,18 +22,18 @@ class MovieForm extends Component {
 	}
 
 	render() {
-		console.log(this, 'is this from form')
 		return(
-			<div className="form">
+			<div className="form-container">
 				<form onSubmit={(this.props.isAdd
 					? (e) => this.props.handleFormSubmit('POST', e, this.state)
 					: (e) => this.props.handleFormSubmit('PUT', e, this.state, this.props.currentMovie.id)
 					)}>
-					<input type="text" name="title" placeholder="Title" value={this.state.title} onChange={this.handleChange} required />
-					<input type="text" name="description" placeholder="Description" value={this.state.description} onChange={this.handleChange} required />
-					<input type="text" name="genre" placeholder="Genre" value={this.state.genre} onChange={this.handleChange} required />
-					<input type="text" name="image" placeholder="Enter image URL here!" value={this.state.image} onChange={this.handleChange} required />
-					<input type="submit" value={this.props.isAdd ? 'Add it!' : 'Edit it!'} />
+					<input type="text" className="form-field" name="title" placeholder="Title" value={this.state.title} onChange={this.handleChange} required />					
+					<input type="text" className="form-field" name="genre" placeholder="Genre" value={this.state.genre} onChange={this.handleChange} required />
+					<input type="text" className="form-field" name="image" placeholder="Enter image URL here!" value={this.state.image} onChange={this.handleChange} required />
+					<input type="text" className="form-field" name="description" placeholder="Description" value={this.state.description} onChange={this.handleChange} required />
+					<input type="submit" value={this.props.isAdd ? 'Add it!' : 'Edit it!'} id="form-submit" />
+
 				</form>
 			</div>
 			)

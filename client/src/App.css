@@ -160,3 +160,22 @@ body {
 	margin-left: 47%;
 	margin-top: 10px;
 }
+
+.form-container {
+	margin-left: 37.5%;
+	margin-top: 10%;
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+}
+
+.form-field {
+	margin-bottom: 10px;
+	width: 300px;
+}
+
+#form-submit {
+	margin-left: 50%;
+	margin-top: 30px;
+	width: 75px;
+}
