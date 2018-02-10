@@ -13,7 +13,6 @@
     "dev": "nodemon server.js",
     "debugger": "DEBUG=*:* nodemon server.js",
     "prod": "NODE_ENV=production node server.js",
-    "postinstall": "webpack -p",
     "deploy": "cd client && yarn build && cp -a ./build/ ../public/"
   },
   "repository": {
