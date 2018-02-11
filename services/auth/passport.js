@@ -1,7 +1,7 @@
 // require dependency
 const passport = require('passport')
 // import User model
-const User = require('../../models/user')
+const User = require('../../models/user.js')
 
 module.exports = () => {
 	passport.serializeUser((user, done) => {

@@ -35,7 +35,7 @@ app.use((req, res, next) => {
 	next()
 })
 
-//app listening on port 3000
+//app listening on port 3001
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
 	console.log(`LISTENING ON PORT ${PORT}`)
