@@ -123,7 +123,7 @@ class App extends Component {
     }).catch(err => console.log(err))
   }
 
-  componentDidMount() {
+  componentWillMount() {
     fetch('/api/auth/verify', { credentials: 'include'})
     .then(res => res.json())
     .then(res => {
