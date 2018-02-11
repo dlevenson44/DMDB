@@ -15,15 +15,7 @@
     "prod": "NODE_ENV=production node server.js",
     "deploy": "cd client && yarn build && cp -a ./build/ ../public/"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dlevenson44/DMDB.git"
-  },
   "author": "Dan Levenson",
-  "bugs": {
-    "url": "https://github.com/dlevenson44/DMDB/issues"
-  },  
-  "homepage": "https://github.com/dlevenson44/DMDB#readme",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
