@@ -3,8 +3,8 @@ const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 
 //import files
-const init = require('./passport')
 const User = require('../../models/user.js')
+const init = require('./passport')
 const authHelpers = require('./auth-helpers')
 
 //set options object
