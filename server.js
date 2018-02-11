@@ -9,6 +9,8 @@ const passport = require('passport')
 
 //initialize app
 const app = express()
+// SET PORT
+const PORT = process.env.PORT || 3001;
 //configure dotenv
 require('dotenv').config()
 
@@ -36,7 +38,7 @@ app.use((req, res, next) => {
 })
 
 //app listening on port 3001
-const PORT = process.env.PORT || 3001;
+
 app.listen(PORT, () => {
 	console.log(`LISTENING ON PORT ${PORT}`)
 })
