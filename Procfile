@@ -1,1 +1,1 @@
-web: cd client && yarn start
+web: node server.js
