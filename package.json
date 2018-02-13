@@ -5,15 +5,12 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node server.js",
-    "client": "cd client && yarn start",
-    "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"yarn run client\"",
-    "build": "cd client && yarn run build",
+    "start": "node server.js",
     "dev": "nodemon server.js",
     "debugger": "DEBUG=*:* nodemon server.js",
     "prod": "NODE_ENV=production node server.js",
-    "deploy": "yarn build && git add . && git commit -m \"building for production\" && git push heroku master",
-    "heroku-postbuild" : "NODE_ENV=production WEBPACK_CONFIG=browser_prod,server_prod"
+    "deploy": "cd client && yarn build && cp -a ./build/ ../public/",
+    "heroku-postbuild" : "cross-env NODE_ENV=production WEBPACK_CONFIG=browser_prod,server_prod webpack --colors",
   },
   "engines": {
     "node": "8.5.0",
@@ -40,5 +37,3 @@
     "pg-promise": "^7.0.3"
   }
 }
-
-
