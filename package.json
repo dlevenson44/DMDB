@@ -10,7 +10,7 @@
     "debugger": "DEBUG=*:* nodemon server.js",
     "prod": "NODE_ENV=production node server.js",
     "deploy": "cd client && yarn build && cp -a ./build/ ../public/",
-    "heroku-postbuild" : "cross-env NODE_ENV=production WEBPACK_CONFIG=browser_prod,server_prod webpack --colors",
+    "heroku-postbuild" : "cross-env NODE_ENV=production WEBPACK_CONFIG=browser_prod,server_prod webpack --colors"
   },
   "engines": {
     "node": "8.5.0",
