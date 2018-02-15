@@ -23,6 +23,7 @@ class App extends Component {
       fireRedirect: false,
       redirectPath: null,
     }
+    // bind functions
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)
     this.handleUpdateSubmit = this.handleUpdateSubmit.bind(this)
