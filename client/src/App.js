@@ -11,8 +11,6 @@ import Footer from './components/Footer'
 import Dashboard from './components/Dashboard'
 import Login from './components/Login'
 import Register from './components/Register'
-// import MovieList from './components/MovieList'
-// import MovieForm from './components/MovieForm'
 import MovieController from './components/MovieController'
 
 class App extends Component {
